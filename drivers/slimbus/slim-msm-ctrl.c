@@ -35,6 +35,7 @@
 /* Manager registers */
 enum mgr_reg {
 	MGR_CFG		= 0x200,
+
 	MGR_STATUS	= 0x204,
 	MGR_RX_MSGQ_CFG	= 0x208,
 	MGR_INT_EN	= 0x210,
@@ -92,7 +93,7 @@ enum mgr_intr {
 
 enum frm_cfg {
 	FRM_ACTIVE	= 1,
-	CLK_GEAR	= 7,
+	CLK_GEAR	= 11,
 	ROOT_FREQ	= 32,
 	REF_CLK_GEAR	= 15,
 	INTR_WAKE	= 19,
