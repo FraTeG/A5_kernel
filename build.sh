@@ -1,9 +1,10 @@
 #!/bin/bash 
+git clone https://github.com/FraTeG/arm-eabi-7.2.git 
 sudo gem install rmega
 export LC_ALL=C 
 export KBUILD_BUILD_USER=FraTeG
 export KBUILD_BUILD_HOST=Ubuntu
-export CROSS_COMPILE=/home/runner/work/Ubuntu-SSH/Ubuntu-SSH/kernel/arm-eabi-4.8/bin/arm-eabi-
+export CROSS_COMPILE=/home/runner/work/Ubuntu-SSH/Ubuntu-SSH/kernel/arm-eabi-7.2/bin/arm-eabi-
 export ARCH=arm && export SUBARCH=arm
 rm -rf out 
 rm -rf make.txt
@@ -15,6 +16,7 @@ make O=out msm8916_sec_defconfig VARIANT_DEFCONFIG=msm8916_sec_a5u_eur_defconfig
 make O=out menuconfig
 make O=out -j$(nproc --all) 
 ./dtbTool -2 -o ./out/arch/arm/boot/dt.img -s 2048 -p ./out/scripts/dtc/ ./out/arch/arm/boot/dts/ -v
+git clone https://github.com/FraTeG/AnyKernel2.git -b msm8916 AnyKernel2
 cd out/arch/arm/boot
 cp dt.img ~/work/Ubuntu-SSH/Ubuntu-SSH/kernel/AnyKernel2
 cp zImage ~/work/Ubuntu-SSH/Ubuntu-SSH/kernel/AnyKernel2
