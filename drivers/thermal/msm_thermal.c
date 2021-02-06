@@ -54,7 +54,7 @@
 #define SENSOR_SCALING_FACTOR 1
 #define CPU_DEVICE "cpu%d"
 
-unsigned int temp_threshold = 85;
+unsigned int temp_threshold = 60;
 module_param(temp_threshold, int, 0755);
 
 static struct msm_thermal_data msm_thermal_info;
